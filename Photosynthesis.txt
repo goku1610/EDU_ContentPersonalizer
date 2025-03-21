@@ -1,0 +1,235 @@
+Photosynthesis
+
+Photosynthesis is the process by which plants, some bacteria and some protistans use the energy
+from sunlight to produce glucose from carbon dioxide and water. This glucose can be converted into
+pyruvate which releases adenosine triphosphate (ATP) by cellular respiration. Oxygen is also formed.
+
+Photosynthesis may be summarised by the word equation:
+
+carbon dioxide + water  ---(sunlight/chlorophyll)---> glucose + oxygen
+
+The conversion of usable sunlight energy into chemical energy is associated with the action of the
+green pigment chlorophyll.
+
+Chlorophyll is a complex molecule. Several modifications of chlorophyll occur among plants and other
+photosynthetic organisms. All photosynthetic organisms have chlorophyll a. Accessory pigments
+absorb energy that chlorophyll a does not absorb. Accessory pigments include chlorophyll b (also c,
+d, and e in algae and protistans), xanthophylls, and carotenoids (such as beta-carotene). Chlorophyll
+a absorbs its energy from the violet-blue and reddish orange-red wavelengths, and little from the
+intermediate (green-yellow-orange) wavelengths.
+
+[Image Placeholder: Chlorophyll molecule diagram labeled "Chlorophyll MDL"]
+
+All chlorophylls have:
+
+•   a lipid-soluble hydrocarbon tail (C20H39 -)
+•   a flat hydrophilic head with a magnesium ion at its centre; different chlorophylls have different
+side-groups on the head
+
+The tail and head are linked by an ester bond.
+
+Leaves and leaf structure
+
+Plants are the only photosynthetic organisms to have leaves (and not all plants have leaves). A leaf
+may be viewed as a solar collector crammed full of photosynthetic cells.
+
+The raw materials of photosynthesis, water and carbon dioxide, enter the cells of the leaf, and the
+products of photosynthesis, sugar and oxygen, leave the leaf.
+
+Water enters the root and is transported up to the leaves through specialized plant cells known as
+xylem vessels. Land plants must guard against drying out and so have evolved specialized structures
+known as stomata to allow gas to enter and leave the leaf. Carbon dioxide cannot pass through the
+protective waxy layer covering the leaf (cuticle), but it can enter the leaf through the stoma (the
+singular of stomata), flanked by two guard cells. Likewise, oxygen produced during photosynthesis
+can only pass out of the leaf through the opened stomata. Unfortunately for the plant, while these
+gases are moving between the inside and outside of the leaf, a great deal of water is also lost.
+Cottonwood trees, for example, will lose 100 gallons (about 450 dm³) of water per hour during hot
+desert days.
+
+The structure of the chloroplast and photosynthetic membranes
+
+The thylakoid is the structural unit of photosynthesis. Both photosynthetic prokaryotes and eukaryotes
+have these flattened sacs/vesicles containing photosynthetic chemicals. Only eukaryotes have
+chloroplasts with a surrounding membrane.
+
+Thylakoids are stacked like pancakes in stacks known collectively as grana. The areas between
+grana are referred to as stroma. While the mitochondrion has two membrane systems, the chloroplast
+has three, forming three compartments.
+
+[Image Placeholder: Structure of a chloroplast diagram, labeling Stroma, Thylakoid, Granum (stack of thylakoids), Intermembrane space, Inner membrane, Outer membrane]
+
+Stages of photosynthesis
+
+When chlorophyll a absorbs light energy, an electron gains energy and is 'excited'. The excited
+electron is transferred to another molecule (called a primary electron acceptor). The chlorophyll
+molecule is oxidized (loss of electron) and has a positive charge. Photoactivation of chlorophyll a
+results in the splitting of water molecules and the transfer of energy to ATP and reduced nicotinamide
+adenine dinucleotide phosphate (NADP).
+
+The chemical reactions involved include:
+
+•   condensation reactions - responsible for water molecules splitting out, including
+phosphorylation (the addition of a phosphate group to an organic compound)
+•   oxidation/reduction (redox) reactions involving electron transfer
+
+Photosynthesis is a two stage process.
+
+The light dependent reactions, a light-dependent series of reactions which occur in the grana, and
+require the direct energy of light to make energy-carrier molecules that are used in the second
+process:
+
+•   light energy is trapped by chlorophyll to make ATP (photophosphorylation)
+•   at the same time water is split into oxygen, hydrogen ions and free electrons:
+
+2H2O  --->  4H+ + O2 + 4e- (photolysis)
+Use code with caution.
+•   the electrons then react with a carrier molecule nicotinamide adenine dinucleotide phosphate
+(NADP), changing it from its oxidised state (NADP+) to its reduced state (NADPH):
+
+NADP+ + 2e- + 2H+  --->  NADPH + H+
+Use code with caution.
+The light-independent reactions, a light-independent series of reactions which occur in the stroma
+of the chloroplasts, when the products of the light reaction, ATP and NADPH, are used to make
+carbohydrates from carbon dioxide (reduction); initially glyceraldehyde 3-phosphate (a 3-carbon atom
+molecule) is formed.
+
+The light-dependent reactions
+
+When light energy is absorbed by a chlorophyll molecule its electrons gain energy and move to higher
+energy levels in the molecule (photoexcitation). Sufficient energy ionises the molecule, with the
+electron being 'freed' leaving a positively charged chlorophyll ion. This is called photoionisation.
+
+In whole chloroplasts each chlorophyll molecule is associated with an electron acceptor and
+an electron donor. These three molecules make up the core of a photosystem. Two electrons from
+a photoionised chlorophyll molecule are transferred to the electron acceptor. The positively charged
+chlorophyll ion then takes a pair of electrons from a neighbouring electron donor such as water.
+
+The effect of light on chlorophyll
+
+[Image Placeholder: Diagram: An isolated chlorophyll molecule. Showing electron falls back to lower energy level, giving out energy as light and heat. light energy absorbed]
+[Image Placeholder: Diagram: A chlorophyll molecule in chloroplast. Showing two electrons are passed to an electron acceptor. electrons from electron-donor fill positive hole. light energy absorbed]
+
+An electron transfer system (a series of chemical reactions) carries the two electrons to and fro across
+the thylakoid membrane. The energy to drive these processes comes from two photosystems:
+
+•   Photosystem II (PSII) (P680)
+•   Photosystem I (PSI) (P700)
+
+It may seem confusing, but PSII occurs before PSI. It is named because it was the second to be
+discovered and hence named second.
+
+The energy changes accompanying the two sets of changes make a Z shape when drawn out. This is
+why the electron transfer process is sometimes called the Z scheme. Key to the scheme is that
+sufficient energy is released during electron transfer to enable ATP to be made from ADP and
+phosphate.
+
+Synthesis of ATP from ADP
+
+[Image Placeholder: Chemical structure diagram showing Phosphoric acid and ADP undergoing a condensation reaction. Water is eliminated and ATP is formed.]
+
+A condensation reaction has led to phosphorylation.
+
+PSII and PSI: the Z scheme
+
+[Image Placeholder: Diagram of the Z scheme, showing PSII, electron acceptor, electron transfer chain, PSI, electron acceptor, and the flow of electrons. Also shows photolysis of water.]
+
+Non-cyclic phosphorylation (the Z scheme)
+
+Both adenosine triphosphate (ATP) and NADPH are produced.
+
+In the first photosystem (Photosystem II, PSII):
+
+•   photoionisation of chlorophyll transfers excited electrons to an electron acceptor
+•   photolysis of water (an electron donor) produces oxygen molecules, hydrogen ions and
+electrons, and the latter are transferred to the positively-charged chlorophyll
+•   the electron acceptor passes the electrons to the electron transport chain; the final acceptor is
+photosystem PSI
+•   further absorbed light energy increases the energy of the electrons, sufficient for the reduction
+of NADP+ to NADPH
+
+[Image Placeholder: Chemical structure of the oxidised form of nicotinamide adenine dinucleotide phosphate (NADP+).]
+[Image Placeholder: Chemical structure of The reduced form of nicotinamide adenine dinucleotide phosphate (NADPH).]
+
+Chemiosmosis and ATP synthesis
+
+The components of non-cyclic phosphorylation are found in the thylakoid membranes of the
+chloroplast. Electrons passing through the transport chain provide energy to pump H+ ions from the
+stroma, across the thylakoid membrane into the thylakoid compartment. H+ ions are more
+concentrated in the thylakoid compartment than in the stroma. We say there is an electrochemical
+gradient. H+ ions diffuse from the high to the low regions of concentration. This drives the production
+of ATP.
+
+[Image Placeholder: Diagram of Chemiosmosis as it operates in photophosphorylation within a chloroplast. Showing Photosystem II, Photosystem I, NADP reductase, ATP synthase, and the movement of H+ ions.]
+
+Cyclic phosphorylation
+
+The net effect of non-cyclic phosphorylation is to pass electrons from water to NADP. Energy
+released enables the production of ATP. But much more ATP is needed to drive the light-independent
+reactions.
+
+This extra energy is obtained from cyclic phosphorylation. This involves only Photosystem I which
+generates excited electrons. These are transferred to the electron transport chain between PSII and
+PSI, rather than to NADP+ and so no NADPH is formed. The cycle is completed by electrons being
+transported back to PSI by the electron transport system.
+
+The light-independent reactions
+
+In the Light-Independent Process (the Dark reaction) carbon dioxide from the atmosphere (or water
+for aquatic/marine organisms) is captured and modified by the addition of hydrogen to form
+carbohydrates. The incorporation of carbon dioxide into organic compounds is known as carbon
+fixation. The energy for this comes from the first phase of the photosynthetic process. Living systems
+cannot directly utilize light energy, but can, through a complicated series of reactions, convert it into
+C-C bond energy that can be released by glycolysis and other metabolic processes.
+
+Carbon dioxide combines with a five-carbon sugar, ribulose 1,5-biphosphate (RuBP). A six-carbon
+sugar forms but is unstable. Each molecule breaks down to form two glycerate 3-phosphate (GP)
+molecules.
+
+[Image Placeholder: Chemical reaction showing CO2 + RuBP reacting to form two molecules of glycerate 3-phosphate (GP).]
+
+These glycerate 3-phosphate (GP) molecules are phosphorylated by ATP into glycerate diphosphate
+molecules.
+
+[Image Placeholder: Chemical structure showing Glycerate 3-phosphate being phosphorylated to glycerate diphosphate.]
+
+These are reduced by NADPH to two molecules of glyceraldehyde 3-phosphate (GALP).
+[Image Placeholder: chemical structure of the product]
+
+Of each pair of GALP molecules produced:
+
+•   one molecule is the initial end product of photosynthesis; it is quickly converted to glucose
+and other carbohydrates, lipids or amino acids
+•   one molecule forms RuBP through a series of chemical reactions
+
+[Image Placeholder: Diagram of the first steps in the Calvin cycle, showing the conversion of CO2 and RuBP to 3PG, and the carbon skeleton of the reaction intermediate.]
+
+The first stable product of the Calvin Cycle is phosphoglycerate (PGA), a 3-C chemical. The energy
+from ATP and NADPH energy carriers generated by the photosystems is used to phosphorylate the
+PGA. Eventually there are 12 molecules of glyceraldehyde phosphate (also known as
+phosphoglyceraldehyde or PGAL, a 3-C), two of which are removed from the cycle to make a
+glucose. The remaining PGAL molecules are converted by ATP energy to reform six RuBP
+molecules, and thus start the cycle again.
+
+Summary of stages of photosynthesis
+
+[Image Placeholder: Flowchart summarizing the stages of photosynthesis, including light capture, water splitting, electron transport, and carbohydrate formation.]
+
+Factors affecting the rate of photosynthesis
+
+The main factors are light intensity, carbon dioxide concentration and temperature, known as limiting
+factors.
+
+As light intensity increases, the rate of the light-dependent reaction, and therefore photosynthesis
+generally, increases proportionately. As light intensity is increased however, the rate of
+photosynthesis is eventually limited by some other factor. Chlorophyll a is used in both photosystems.
+The wavelength of light is also important. PSI absorbs energy most efficiently at 700 nm and PSII at
+680 nm. Light with a high proportion of energy concentrated in these wavelengths will produce a high
+rate of photosynthesis.
+
+An increase in the carbon dioxide concentration increases the rate at which carbon is incorporated
+into carbohydrate in the light-independent reaction and so the rate of photosynthesis generally
+increases until limited by another factor.
+
+Photosynthesis is dependent on temperature. It is a reaction catalysed by enzymes. As the enzymes
+approach their optimum temperatures the overall rate increases. Above the optimum temperature the
+rate begins to decrease until it stops.
