@@ -1,0 +1,51 @@
+{
+  "demographics": {
+    "age": 0,
+    "class": ""
+  },
+  
+  "primary_interests": [
+    {
+      "interest": "",
+      "significance": 0,
+      "contexts": [],
+      "emotional_connection": ""
+    }
+  ],
+  
+  "secondary_interests": [
+    {
+      "interest": "",
+      "applications": [],
+      "connection_potential": ""
+    }
+  ],
+  
+  "learning_style_preferences": {
+    "primary_mode": "",
+    "secondary_mode": "",
+    "optimal_format": "",
+    "engagement_pattern": "",
+    "challenge_level": ""
+  },
+  
+  "narrative_frameworks": [
+    {
+      "source": "",
+      "elements": [],
+      "application_potential": ""
+    }
+  ],
+  
+  "personalization_vectors": {
+    "high_impact_approaches": [],
+    "cognitive_hooks": [],
+    "caution_areas": []
+  },
+  
+  "engagement_triggers": {
+    "curiosity_activators": [],
+    "achievement_motivators": [],
+    "relevance_enhancers": []
+  }
+}

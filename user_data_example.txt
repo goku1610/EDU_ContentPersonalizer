@@ -1,0 +1,30 @@
+Name: Alex Chen
+Age: 16
+Grade: 11th
+
+Academic Information:
+- GPA: 3.7/4.0
+- Strongest subjects: Biology, English Literature
+- Challenging subjects: Physics, Calculus
+- Learning style assessment: Visual learner, benefits from graphical representations, prefers independent study before group discussions
+
+Interests and Hobbies:
+- Video games (especially Minecraft, The Legend of Zelda, and strategy games)
+- Astronomy (follows NASA updates, has a telescope, watches space documentaries)
+- Plays guitar (3 years, likes alternative rock and folk music)
+- Participates in school's robotics club
+- Enjoys anime (favorite series: Fullmetal Alchemist, My Hero Academia)
+- Basketball (plays casually with friends)
+
+Media Preferences:
+- Favorite books: Science fiction, fantasy (currently reading Brandon Sanderson's novels)
+- Favorite movies: Marvel Cinematic Universe, Studio Ghibli films
+- Favorite TV shows: Stranger Things, The Expanse
+- YouTube subscriptions: Vsauce, Veritasium, Guitar tutorial channels
+
+Personal Traits:
+- Introvert who opens up when discussing topics of interest
+- Detail-oriented, notices patterns
+- Prefers to understand the "why" behind concepts
+- Gets easily bored with repetitive tasks
+- Responds well to challenges and achievement-based motivation
