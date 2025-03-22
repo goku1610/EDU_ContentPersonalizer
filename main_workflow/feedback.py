@@ -3,12 +3,100 @@ import os
 from google import genai
 from google.genai import types
 import sys
+from fpdf import FPDF
+import os
+import re
+import markdown
+from bs4 import BeautifulSoup
 
-if len(sys.argv) > 1:
-    name = sys.argv[1]
-else:
-    print("Error: Please provide a name as an argument. Example: python3 feedback.py username")
-    sys.exit(1)
+def convert_text_to_pdf(input_file, output_pdf, font_family='Courier', font_size=10):
+    """
+    Convert a text file to PDF while preserving formatting and converting markdown to plain text.
+    Handles Unicode characters by replacing them with ASCII equivalents.
+    
+    Parameters:
+    input_file (str): Path to the input text file (potentially containing markdown)
+    output_pdf (str): Path for the output PDF file
+    font_family (str): Font to use (monospaced fonts like Courier work best for preserving format)
+    font_size (int): Font size to use
+    """
+    # Create PDF object
+    pdf = FPDF(orientation='P', unit='mm', format='A4')
+    pdf.add_page()
+    
+    # Set font (using a monospaced font to preserve formatting)
+    pdf.set_font(font_family, '', font_size)
+    
+    # Calculate line height
+    line_height = pdf.font_size * 1.5
+    
+    # Define replacements for problematic Unicode characters
+    replacements = {
+        '\u2019': "'",  # right single quotation mark
+        '\u2018': "'",  # left single quotation mark
+        '\u201c': '"',  # left double quotation mark
+        '\u201d': '"',  # right double quotation mark
+        '\u2013': '-',  # en dash
+        '\u2014': '--', # em dash
+        '\u2026': '...', # ellipsis
+        '\u00a0': ' ',  # non-breaking space
+        # Add more replacements as needed
+    }
+    
+    # Read the entire content of the file
+    with open(input_file, 'r', encoding='utf-8') as file:
+        content = file.read()
+    
+    # Convert markdown to HTML
+    html_content = markdown.markdown(content)
+    
+    # Convert HTML to plain text
+    soup = BeautifulSoup(html_content, 'html.parser')
+    plain_text = soup.get_text()
+    
+    # Process the plain text line by line
+    for line in plain_text.split('\n'):
+        # Replace problematic Unicode characters
+        for char, replacement in replacements.items():
+            line = line.replace(char, replacement)
+        
+        # Further sanitize by replacing any remaining non-ASCII characters
+        line = re.sub(r'[^\x00-\x7F]+', ' ', line)
+        
+        pdf.cell(0, line_height, line, ln=1)
+    
+    # Save the PDF
+    pdf.output(output_pdf)
+    return output_pdf
+
+def auto_convert_on_file_change(input_file, output_pdf):
+    """
+    Monitor the input file and automatically convert to PDF when it changes.
+    
+    Parameters:
+    input_file (str): Path to the input text file
+    output_pdf (str): Path for the output PDF file
+    """
+    import time
+    last_modified = os.path.getmtime(input_file)
+    
+    print(f"Monitoring {input_file} for changes...")
+    
+    while True:
+        current_modified = os.path.getmtime(input_file)
+        if current_modified > last_modified:
+            print(f"File changed. Converting to PDF...")
+            convert_text_to_pdf(input_file, output_pdf)
+            print(f"PDF created: {output_pdf}")
+            last_modified = current_modified
+        time.sleep(1)  # Check every second
+
+
+
+
+
+with open("name_json.txt", "r") as f:
+    name = f.read()
 
 files_in_directory = os.listdir("dirr")
 filename = "dirr/" + files_in_directory[0]
@@ -20,7 +108,7 @@ with open("output.txt", "r") as f:
     personalized_content = f.read()
 
 
-with open(f"profiles_user/{name}.json", "r") as f:
+with open(name, "r") as f:
     user_profile = f.read()
 
 def generate(filename,content,user_profile,personalized_content):
@@ -163,12 +251,25 @@ For each C1-C14 criterion:
         response_mime_type="text/plain",
     )
 
+    response_text = ""
     for chunk in client.models.generate_content_stream(
         model=model,
         contents=contents,
         config=generate_content_config,
     ):
-        print(chunk.text, end="")
+        chunk_text = chunk.text
+        print(chunk_text, end="")
+        response_text += chunk_text
+    
+    return response_text
 
 if __name__ == "__main__":
-    generate(filename,content=content,user_profile=f"profiles_user/{name}.json",personalized_content=personalized_content)
+    gg = generate(filename,content=content,user_profile=f"profiles_user/{name}.json",personalized_content=personalized_content)
+    with open("output_feedback.txt", "w") as f:
+        f.write(gg)
+    input_file = "output_feedback.txt"
+    output_pdf = "evaluation_report.pdf"
+    
+    # Option 1: Convert once
+    convert_text_to_pdf(input_file, output_pdf)
+    print(f"PDF created successfully: {output_pdf}")

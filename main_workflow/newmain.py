@@ -15,6 +15,9 @@ else:
     file_path = 'profiles_user/f.json'
     print("No JSON file specified, using default: f.json")
 
+with open("name_json.txt", "w") as f:
+    f.write(file_path)
+
 try:
     with open(file_path, 'r') as file:
         data = json.load(file)
