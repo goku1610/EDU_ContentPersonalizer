@@ -91,5 +91,16 @@
       "curiosity_activators": ["logical puzzles", "efficiency challenges", "strategic scenarios"],
       "achievement_motivators": ["mastery tracking", "competitive elements", "increasingly complex challenges"],
       "relevance_enhancers": ["real-world applications in technology", "connections to advanced mathematics", "historical significance of concepts"]
+    },
+    
+    "user_profile": {
+      "READER_AGE_GRADE": "10th Grade (Age 15)",
+      "READER_PRIOR_KNOWLEDGE": "Advanced mathematics, Basic programming skills",
+      "READER_EDUCATIONAL_BACKGROUND": "Secondary education with focus on STEM subjects",
+      "READER_CULTURAL_BACKGROUND": "Technology-oriented, Competitive academic environment",
+      "READER_LEARNING_STYLE": "Logical-sequential thinker, Independent problem solver",
+      "READER_ACCESSIBILITY_NEEDS": "None",
+      "READER_LEARNING_GOALS": "To excel in mathematics competitions, develop programming expertise",
+      "READER_LEARNING_ENVIRONMENT": "Structured academic setting with additional enrichment programs"
     }
   }

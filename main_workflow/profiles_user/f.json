@@ -91,5 +91,16 @@
       "curiosity_activators": ["competitive elements", "cultural connections", "visual demonstrations"],
       "achievement_motivators": ["public recognition", "collecting achievements", "family approval"],
       "relevance_enhancers": ["connections to daily Indian life", "cultural significance", "practical applications at home"]
+    },
+    
+    "user_profile": {
+      "READER_AGE_GRADE": "5th Grade (Age 10)",
+      "READER_PRIOR_KNOWLEDGE": "Basic mathematics, Elementary science concepts",
+      "READER_EDUCATIONAL_BACKGROUND": "Primary school education in Indian curriculum",
+      "READER_CULTURAL_BACKGROUND": "Indian, familiar with local traditions and customs",
+      "READER_LEARNING_STYLE": "Visual learner with preference for storytelling and collaborative activities",
+      "READER_ACCESSIBILITY_NEEDS": "None",
+      "READER_LEARNING_GOALS": "To develop fundamental understanding of science concepts, improve artistic skills",
+      "READER_LEARNING_ENVIRONMENT": "Traditional classroom with supplementary home learning"
     }
   }

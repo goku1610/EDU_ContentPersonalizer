@@ -91,5 +91,16 @@
       "curiosity_activators": ["how things work", "building challenges", "historical technologies"],
       "achievement_motivators": ["completed projects", "functional creations", "technical mastery"],
       "relevance_enhancers": ["connections to real-world engineering", "historical technological impact", "practical skills development"]
+    },
+    
+    "user_profile": {
+      "READER_AGE_GRADE": "6th Grade (Age 11)",
+      "READER_PRIOR_KNOWLEDGE": "Basic mechanical concepts, Hands-on building experience",
+      "READER_EDUCATIONAL_BACKGROUND": "Elementary education with interest in STEM activities",
+      "READER_CULTURAL_BACKGROUND": "Traditional values, Technical-oriented hobbies",
+      "READER_LEARNING_STYLE": "Hands-on/technical learner with visual demonstration preference",
+      "READER_ACCESSIBILITY_NEEDS": "None",
+      "READER_LEARNING_GOALS": "To understand how things work, develop practical building skills",
+      "READER_LEARNING_ENVIRONMENT": "Conventional classroom with access to maker spaces and technical activities"
     }
   }

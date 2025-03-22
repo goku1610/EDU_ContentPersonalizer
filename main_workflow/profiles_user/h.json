@@ -91,5 +91,16 @@
       "curiosity_activators": ["real-world problems", "ethical questions", "systemic connections"],
       "achievement_motivators": ["making difference", "developing voice", "community impact"],
       "relevance_enhancers": ["connections to current events", "social impact potential", "sustainability applications"]
+    },
+    
+    "user_profile": {
+      "READER_AGE_GRADE": "8th Grade (Age 13)",
+      "READER_PRIOR_KNOWLEDGE": "Basic environmental science, Introduction to social studies",
+      "READER_EDUCATIONAL_BACKGROUND": "Middle school education with focus on humanities",
+      "READER_CULTURAL_BACKGROUND": "Environmentally conscious, Socially aware",
+      "READER_LEARNING_STYLE": "Discussion-based and reflective learner",
+      "READER_ACCESSIBILITY_NEEDS": "None",
+      "READER_LEARNING_GOALS": "To understand complex social and environmental issues, develop advocacy skills",
+      "READER_LEARNING_ENVIRONMENT": "Progressive school setting with emphasis on social responsibility"
     }
   }

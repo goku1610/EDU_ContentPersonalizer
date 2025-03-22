@@ -91,5 +91,16 @@
       "curiosity_activators": ["performance improvement", "cultural connections", "market trends"],
       "achievement_motivators": ["visible progress", "peer recognition", "skill development"],
       "relevance_enhancers": ["connections to athletics", "business applications", "cultural significance"]
+    },
+    
+    "user_profile": {
+      "READER_AGE_GRADE": "7th Grade (Age 12)",
+      "READER_PRIOR_KNOWLEDGE": "Sports statistics, Basic music knowledge",
+      "READER_EDUCATIONAL_BACKGROUND": "Middle school education with interest in physical education",
+      "READER_CULTURAL_BACKGROUND": "Urban youth culture, Hip-hop influence",
+      "READER_LEARNING_STYLE": "Active/kinesthetic learner with social engagement preference",
+      "READER_ACCESSIBILITY_NEEDS": "None",
+      "READER_LEARNING_GOALS": "To connect academic concepts with real-world applications, develop team skills",
+      "READER_LEARNING_ENVIRONMENT": "Traditional classroom with supplementary extracurricular activities"
     }
   }

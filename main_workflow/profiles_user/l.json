@@ -91,5 +91,16 @@
       "curiosity_activators": ["what-if scenarios", "character motivations", "world-building systems"],
       "achievement_motivators": ["creative production", "narrative mastery", "mythological connections"],
       "relevance_enhancers": ["connections to beloved stories", "historical origins of myths", "psychological insights"]
+    },
+    
+    "user_profile": {
+      "READER_AGE_GRADE": "4th Grade (Age 9)",
+      "READER_PRIOR_KNOWLEDGE": "Fantasy literature, Basic mythology concepts",
+      "READER_EDUCATIONAL_BACKGROUND": "Elementary education with strong language arts foundation",
+      "READER_CULTURAL_BACKGROUND": "Literary-rich environment, Exposure to various mythological traditions",
+      "READER_LEARNING_STYLE": "Narrative-based learner with analytical discussion preference",
+      "READER_ACCESSIBILITY_NEEDS": "None",
+      "READER_LEARNING_GOALS": "To develop creative writing skills, understand literary patterns",
+      "READER_LEARNING_ENVIRONMENT": "Reading-focused classroom with creative expression opportunities"
     }
   }

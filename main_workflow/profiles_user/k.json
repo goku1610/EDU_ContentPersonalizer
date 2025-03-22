@@ -91,5 +91,16 @@
       "curiosity_activators": ["visual patterns", "movement possibilities", "creative applications"],
       "achievement_motivators": ["performance opportunities", "visual portfolio development", "skill showcasing"],
       "relevance_enhancers": ["connections to visual culture", "movement applications", "self-expression opportunities"]
+    },
+    
+    "user_profile": {
+      "READER_AGE_GRADE": "5th Grade (Age 10)",
+      "READER_PRIOR_KNOWLEDGE": "Basic dance terminology, Visual arts foundations",
+      "READER_EDUCATIONAL_BACKGROUND": "Elementary education with focus on arts",
+      "READER_CULTURAL_BACKGROUND": "Media-savvy, Contemporary urban influences",
+      "READER_LEARNING_STYLE": "Visual-kinesthetic learner with social collaboration preference",
+      "READER_ACCESSIBILITY_NEEDS": "None",
+      "READER_LEARNING_GOALS": "To develop creative expression, enhance performance skills",
+      "READER_LEARNING_ENVIRONMENT": "Arts-integrated classroom with performance opportunities"
     }
   }
