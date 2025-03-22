@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Learning Profiles</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-gradient: linear-gradient(135deg, #6366f1, #4f46e5);
+            --hover-gradient: linear-gradient(135deg, #4f46e5, #6366f1);
+            --card-gradient-1: linear-gradient(135deg, #3b82f6, #2563eb);
+            --card-gradient-2: linear-gradient(135deg, #8b5cf6, #6d28d9);
+            --card-gradient-3: linear-gradient(135deg, #ec4899, #db2777);
+            --card-gradient-4: linear-gradient(135deg, #f59e0b, #d97706);
+            --card-gradient-5: linear-gradient(135deg, #10b981, #059669);
+            --card-gradient-6: linear-gradient(135deg, #6366f1, #4f46e5);
+            --card-gradient-7: linear-gradient(135deg, #14b8a6, #0d9488);
+            --card-gradient-8: linear-gradient(135deg, #f43f5e, #e11d48);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc;
+            color: #1e293b;
+            line-height: 1.5;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #1e293b;
+            margin-bottom: 1rem;
+        }
+
+        .header p {
+            font-size: 1.1rem;
+            color: #64748b;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .profile-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .profile {
+            background: var(--card-gradient-1);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .profile:nth-child(2) { background: var(--card-gradient-2); }
+        .profile:nth-child(3) { background: var(--card-gradient-3); }
+        .profile:nth-child(4) { background: var(--card-gradient-4); }
+        .profile:nth-child(5) { background: var(--card-gradient-5); }
+        .profile:nth-child(6) { background: var(--card-gradient-6); }
+        .profile:nth-child(7) { background: var(--card-gradient-7); }
+        .profile:nth-child(8) { background: var(--card-gradient-8); }
+
+        .profile:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+
+        .profile::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to right, rgba(255,255,255,0.1), transparent);
+            transform: translateX(-100%);
+            transition: transform 0.5s ease;
+        }
+
+        .profile:hover::before {
+            transform: translateX(100%);
+        }
+
+        .profile strong {
+            font-size: 1.25rem;
+            color: white;
+            display: block;
+            margin-bottom: 0.75rem;
+        }
+
+        .description {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        #uploadSection {
+            display: none;
+            max-width: 500px;
+            margin: 2rem auto;
+            background: white;
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+
+        #uploadSection h2 {
+            font-size: 1.5rem;
+            color: #1e293b;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .upload-area {
+            border: 2px dashed #e2e8f0;
+            border-radius: 0.75rem;
+            padding: 2rem;
+            text-align: center;
+            margin-bottom: 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .upload-area:hover {
+            border-color: #6366f1;
+            background: #f8fafc;
+        }
+
+        .upload-area-profile {
+            border: 2px dashed #e2e8f0;
+            border-radius: 0.75rem;
+            padding: 2rem;
+            text-align: center;
+            /* margin-bottom: 1.5rem; */
+            transition: all 0.3s ease;
+        }
+
+        .upload-area-profile:hover {
+            border-color: #6366f1;
+            background: #f8fafc;
+        }
+
+        input[type="file"] {
+            display: none;
+        }
+
+        
+        .file-label, .upload-profile-button {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            align-items: center;
+            justify-content: center;
+            background: var(--primary-gradient);
+            color: white;
+            border: none;
+            block-size: 60%;
+            font-size: 1rem;
+            border-radius: 0.5rem;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .file-label:hover , .upload-profile-button:hover{
+            background: var(--hover-gradient);
+            transform: translateY(-2px);
+        }
+
+        .selected-file {
+            margin-top: 1rem;
+            color: #64748b;
+            font-size: 0.9rem;
+        }
+        .selected-file-profile {
+            margin-bottom: 1rem;
+            color: #64748b;
+            font-size: 0.9rem;
+        }
+
+        .upload-file-button {
+            display: block;
+            width: 100%;
+            padding: 0.75rem;
+            background: var(--primary-gradient);
+            color: white;
+            border: none;
+            border-radius: 0.5rem;
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .upload-file-button:hover {
+            background: var(--hover-gradient);
+            transform: translateY(-2px);
+        }
+
+        .upload-file-button:disabled {
+            opacity: 0.7;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .back-button {
+            display: inline-block;
+            margin-top: 1rem;
+            color: #6366f1;
+            text-decoration: none;
+            font-weight: 500;
+            cursor: pointer;
+        }
+
+        .back-button:hover {
+            color: #4f46e5;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Select Your Learning Profile</h1>
+            <p>Choose your profile to personalize your learning experience and upload your file</p>
+        </div>
+
+        <div class="profile-container" id="profiles">
+            <div class="profile" onclick="selectProfile('f')">
+                <strong>Cricket & Art Explorer</strong>
+                <div class="description">10-year-old enthusiast passionate about cricket, rangoli designs, and mythology</div>
+            </div>
+            <div class="profile" onclick="selectProfile('g')">
+                <strong>Tech Prodigy</strong>
+                <div class="description">15-year-old math wizard and coding enthusiast solving complex problems</div>
+            </div>
+            <div class="profile" onclick="selectProfile('h')">
+                <strong>Earth Champion</strong>
+                <div class="description">13-year-old environmental advocate fighting for a better future</div>
+            </div>
+            <div class="profile" onclick="selectProfile('i')">
+                <strong>Sports & Music Star</strong>
+                <div class="description">12-year-old athlete with a passion for basketball, football, and hip-hop</div>
+            </div>
+            <div class="profile" onclick="selectProfile('j')">
+                <strong>Future Aviator</strong>
+                <div class="description">11-year-old aspiring engineer with dreams of flight</div>
+            </div>
+            <div class="profile" onclick="selectProfile('k')">
+                <strong>Creative Performer</strong>
+                <div class="description">10-year-old dancer expressing creativity through movement and fashion</div>
+            </div>
+            <div class="profile" onclick="selectProfile('l')">
+                <strong>Young Storyteller</strong>
+                <div class="description">9-year-old writer weaving tales of fantasy and mythology</div>
+            </div>
+            <div class="profile" onclick="selectProfile('m')">
+                <strong>Science Chef</strong>
+                <div class="description">8-year-old experimenter mixing science with culinary arts</div>
+            </div>
+            <div class="upload-area-profile">
+                <input type="file" id="fileInput" onchange="updateFileName()">
+                <div class="selected-file-profile" id="selectedFileName">Create custom learning profile</div>
+                <label for="fileInput" class="file-label">Choose File</label>
+                <button onclick="uploadProfile()" class="upload-profile-button" id="uploadProfileButton">Upload</button>
+
+
+            </div>
+        </div>
+
+        <div id="uploadSection">
+            <h2>Upload Your File</h2>
+            <div class="upload-area">
+                <input type="file" id="fileInput" onchange="updateFileName()">
+                <label for="fileInput" class="file-label">Choose File</label>
+                <div class="selected-file" id="selectedFileName"></div>
+            </div>
+            <button class="upload-file-button" onclick="uploadFile()" id="uploadButton">Upload</button>
+            <div style="text-align: center">
+                <span class="back-button" onclick="goBack()">← Back to Profiles</span>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let selectedUser = "";
+        
+        function selectProfile(user) {
+            selectedUser = user;
+            document.getElementById('profiles').style.display = 'none';
+            document.getElementById('uploadSection').style.display = 'block';
+        }
+
+        function updateFileName() {
+            const fileInput = document.getElementById('fileInput');
+            const fileName = document.getElementById('selectedFileName');
+            if (fileInput.files.length > 0) {
+                fileName.textContent = fileInput.files[0].name;
+            } else {
+                fileName.textContent = 'No file chosen';
+            }
+        }
+
+        function goBack() {
+            document.getElementById('profiles').style.display = 'grid';
+            document.getElementById('uploadSection').style.display = 'none';
+            document.getElementById('fileInput').value = '';
+            document.getElementById('selectedFileName').textContent = 'No file chosen';
+        }
+
+        function uploadFile() {
+            const fileInput = document.getElementById('fileInput');
+            const uploadButton = document.getElementById('uploadButton');
+            
+            if (!fileInput.files[0]) {
+                alert("Please select a file");
+                return;
+            }
+            
+            uploadButton.disabled = true;
+            uploadButton.textContent = 'Processing... (This may take a while)';
+            
+            const formData = new FormData();
+            formData.append("file", fileInput.files[0]);
+            formData.append("user", selectedUser);
+            
+            fetch("/upload", {
+                method: "POST",
+                body: formData
+            })
+            .then(response => response.text())
+            // .then(data => {
+            //     alert(data);
+            //     uploadButton.disabled = false;
+            //     uploadButton.textContent = 'Upload';
+            //     goBack();
+            // })
+            .then(() => {
+        window.location.href = "/results"; // Redirects to the results page
+    })
+            .catch(error => {
+                console.error("Error:", error);
+                alert("An error occurred during upload");
+                uploadButton.disabled = false;
+                uploadButton.textContent = 'Upload';
+            });
+        }
+        function uploadProfile() {
+            const fileInput = document.getElementById("fileInput");
+            const uploadProfileButton = document.getElementById('uploadProfileButton');
+
+            uploadProfileButton.disabled = true;
+            uploadProfileButton.textContent = 'Processing...';
+
+            if (fileInput.files.length > 0) {
+                const file = fileInput.files[0]; // Get the selected file
+
+                // Create FormData to send the file
+                let formData = new FormData();
+                formData.append("file", file);
+
+                // Send file to the server
+                fetch("/uploadprofile", {
+                    method: "POST",
+                    body: formData
+                })
+                .then(response => response.json())
+                .then(data => {
+                    console.log("Upload successful:", data);
+                    alert("Please wait a few moments for the file to be uploaded and processed.");
+
+                    // Run Python script after upload
+                    return runPythonScript();
+                })
+                .then(() => {
+                    // Wait until n.json exists
+                    return waitForFile("n.json");
+                })
+                .then(data => {
+                    
+                    
+                    // Set user and show upload section
+                    selectedUser = 'n';
+                    document.getElementById('profiles').style.display = 'none';
+                    document.getElementById('uploadSection').style.display = 'block';
+                    
+                   
+                    
+                })
+                .catch(error => {
+                    console.error("Error uploading file:", error);
+                    alert("File upload failed.");
+                });
+
+            } else {
+                alert("No file selected.");
+            }
+
+        }
+
+        // Function to trigger Python script execution
+        function runPythonScript() {
+            fetch("/run-script", { method: "POST" })
+            .then(response => response.json())
+            .then(data => console.log("Python script executed:", data))
+            .catch(error => console.error("Error running script:", error));
+        }
+        function waitForFile(filename) {
+    return new Promise((resolve, reject) => {
+        let attempts = 0;
+        let maxAttempts = 100; // Maximum retries (adjust as needed)
+        let interval = 3000; // Check every 1 second
+
+        function checkFile() {
+            fetch(`/checkfile?filename=${filename}`)
+                .then(response => response.json())
+                .then(data => {
+                    if (data.exists) {
+                        resolve(); // File exists, proceed
+                    } else if (attempts < maxAttempts) {
+                        attempts++;
+                        setTimeout(checkFile, interval); // Retry after delay
+                    } else {
+                        reject("File not found after multiple attempts.");
+                    }
+                })
+                .catch(error => {
+                    console.error("Error checking file:", error);
+                    reject(error);
+                });
+        }
+
+        checkFile();
+    });
+}
+
+
+    </script>
+</body>
+</html>

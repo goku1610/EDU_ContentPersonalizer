@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profiles</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; background-color: #f0f0f0; }
+        .profile-container { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; max-width: 900px; margin: auto; }
+        .profile {
+            width: 250px; 
+            padding: 20px; 
+            border-radius: 15px; 
+            cursor: pointer; 
+            text-align: center; 
+            box-shadow: 3px 3px 10px rgba(0,0,0,0.2);
+            color: white;
+            font-weight: bold;
+            transition: transform 0.2s, box-shadow 0.2s;
+            background: linear-gradient(135deg, #00c6ff, #0072ff);
+        }
+        .profile:hover { 
+            transform: scale(1.05); 
+            box-shadow: 5px 5px 15px rgba(0,0,0,0.3);
+        }
+        .description { font-size: 14px; margin-top: 8px; }
+        #uploadSection {
+            display: none;
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 5px 5px 20px rgba(0,0,0,0.2);
+            max-width: 400px;
+            margin: 30px auto;
+        }
+        #uploadSection h2 {
+            margin-bottom: 15px;
+            color: #333;
+        }
+        .file-input-container {
+            position: relative;
+            width: 100%;
+            text-align: center;
+        }
+        .file-label {
+            display: block;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 12px;
+            border-radius: 10px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+        .file-label:hover {
+            background: linear-gradient(135deg, #764ba2, #667eea);
+        }
+        input[type="file"] {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            border: 2px dashed #aaa;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            text-align: center;
+            cursor: pointer;
+        }
+        button {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 10px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+        button:hover {
+            background: linear-gradient(135deg, #764ba2, #667eea);
+        }
+    </style>
+</head>
+<body>
+    <div class="header"><h2>Select a User Profile</h2></div>
+
+        <div class="profile-container" id="profiles">
+            <div class="profile" onclick="selectProfile('f')">
+                <strong>User 1</strong>
+                <div class="description">10-year-old Cricket & Art Enthusiast. Loves cricket, rangoli designs, and mythology.</div>
+            </div>
+            <div class="profile" onclick="selectProfile('g')">
+                <strong>User 2</strong>
+                <div class="description">15-year-old Math & Programming Prodigy. Passionate about problem-solving and coding.</div>
+            </div>
+            <div class="profile" onclick="selectProfile('h')">
+                <strong>User 3</strong>
+                <div class="description">13-year-old Environmental Advocate. Interested in climate change and social justice.</div>
+            </div>
+            <div class="profile" onclick="selectProfile('i')">
+                <strong>User 4</strong>
+                <div class="description">12-year-old Sports & Music Fanatic. Loves basketball, football, and hip-hop.</div>
+            </div>
+            <div class="profile" onclick="selectProfile('j')">
+                <strong>User 5</strong>
+                <div class="description">11-year-old Future Engineer & Aviator. Enthusiastic about building and aviation.</div>
+            </div>
+            <div class="profile" onclick="selectProfile('k')">
+                <strong>User 6</strong>
+                <div class="description">10-year-old Dance & Fashion Enthusiast. Passionate about hip-hop dance and fashion design.</div>
+            </div>
+            <div class="profile" onclick="selectProfile('l')">
+                <strong>User 7</strong>
+                <div class="description">9-year-old Aspiring Storyteller. Loves fantasy books, mythology, and creative writing.</div>
+            </div>
+            <div class="profile" onclick="selectProfile('m')">
+                <strong>User 8</strong>
+                <div class="description">8-year-old Young Scientist & Chef. Loves chemistry experiments and cooking.</div>
+            </div>
+        </div>
+
+    <div id="uploadSection">
+        <h2>Upload File</h2>
+        <input type="file" id="fileInput">
+        <button onclick="uploadFile()">Upload</button>
+    </div>
+
+    <script>
+        let selectedUser = "";
+        
+        function selectProfile(user) {
+            selectedUser = user;
+            document.getElementById('profiles').style.display = 'none';
+            document.getElementById('uploadSection').style.display = 'block';
+        }
+
+        function uploadFile() {
+            let fileInput = document.getElementById('fileInput');
+            let file = fileInput.files[0];
+            if (!file) {
+                alert("Please select a file");
+                return;
+            }
+            
+            let formData = new FormData();
+            formData.append("file", file);
+            formData.append("user", selectedUser);
+            
+            fetch("/upload", {
+                method: "POST",
+                body: formData
+            }).then(response => response.text())
+              .then(data => alert("File uploaded: " + data))
+              .catch(error => console.error("Error:", error));
+        }
+    </script>
+</body>
+</html>

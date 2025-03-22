@@ -35,12 +35,7 @@ papa_prompt = f"""# ADVANCED EDUCATIONAL CONTENT ANALYSIS PROMPT
 ## CORE ANALYSIS PARAMETERS
 CONTENT_TO_ANALYZE: [attached PDF/TEXT CONTENT]
 
-[
-reader: {reader}
-learning_modality: {learning_modality}
-core_depenencies: {core_competencies}
-]
-
+User Profile: {data}
 
 
 ## IN-DEPTH QUALITY CRITERIA INSTRUCTIONS
@@ -266,15 +261,6 @@ PRIORITY_4: Learner types with accommodation <2
 3. Cognitive percentages sum to 100% ±2%
 4. Enhancement priorities match flagged issues
 5. Sample implementation demonstrates key improvements
-
-## TPI CALCULATION FRAMEWORK
-1. Near_Score = (Present Transfer Types/3)*10
-2. Conditional_Score = (Present Transfer Types/3)*10
-3. Far_Score = (Present Transfer Types/3)*10
-4. TPI = (Near*0.2)+(Conditional*0.3)+(Far*0.5)
-
-INTERPRETATION:
-8-10 = Exemplary transfer potential
 6-7.9 = Strong transfer potential
 4-5.9 = Moderate transfer potential
 <4 = Limited transfer potential
@@ -296,7 +282,6 @@ ACCESSIBILITY_GAP: Any learner profile score <2
 // END OF PROMPT //
 
 """
-
 def get_files_from_directory(directory_path):
     return glob.glob(os.path.join(directory_path, '*.pdf')) + glob.glob(os.path.join(directory_path, '*.txt'))
 
@@ -406,7 +391,7 @@ Analysis Content: {analysis_content}
 User Profile: {profile_content}  
 
 **CORE MANDATES**  
-❗ STRICT REQUIREMENT: Treat Content Analysis recommendations as REQUIRED CHANGES, not suggestions  
+❗ STRICT REQUIREMENT: Treat Content Analysis imprtoverments as REQUIRED CHANGES, not suggestions  
 ⚠️ FAIL-SAFE: Cross-verify final output against both Analysis Report and User Profile  
 
 **ANALYSIS-DRIVEN INSTRUCTIONS**  
@@ -519,7 +504,8 @@ Return only the refined lesson in ready-to-use format without commentary. Mainta
         print(f"Error saving to output.txt: {e}")
 
 if __name__ == "__main__":
+    print(papa_prompt)
     analysis_content = generate(papa_prompt)
     generated_content = generate_content(analysis_content,file_path)
     print(generated_content)
-
+    
