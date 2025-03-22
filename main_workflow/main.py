@@ -36,9 +36,9 @@ papa_prompt = f"""# ADVANCED EDUCATIONAL CONTENT ANALYSIS PROMPT
 CONTENT_TO_ANALYZE: [attached PDF/TEXT CONTENT]
 
 [
-{reader}
-{learning_modality}
-{core_competencies}
+reader: {reader}
+learning_modality: {learning_modality}
+core_depenencies: {core_competencies}
 ]
 
 
@@ -48,8 +48,8 @@ CONTENT_TO_ANALYZE: [attached PDF/TEXT CONTENT]
 [1] CONTENT QUALITY ASSESSMENT
 INSTRUCTIONS:
 - Score each criterion 1-5 (1=poor, 3=adequate, 5=excellent)
-- Cite 2+ specific text examples per criterion
-- Suggest concrete improvements per criterion
+- Cite specific text examples per criterion
+- Suggest concrete improvements per criterion for the entire text(dont limit the suggested improvements)
 
 CRITERIA_DETAILS:
 
@@ -293,11 +293,7 @@ TRANSFER_DEFICIT: TPI <4
 COGNITIVE_IMBALANCE: HOTS <30%
 ACCESSIBILITY_GAP: Any learner profile score <2
 
-##EXPLICIT INSTRUCTIONS
-  -Do not modify the input no matter how low it scores, find the scores for the original input
-
 // END OF PROMPT //
-
 
 """
 
@@ -402,18 +398,71 @@ def generate_content(analysis_content,file_path):
     parts = []
     
     # Add text content first
-    prompt_text = f"""
-Original Content = [Uploaded as a file]
+    prompt_text = f"""**Personalized Learning Content Generation Prompt**
 
-Analysis Content:
-{analysis_content}
+**Input Structure**  
+Original Content = [Uploaded as file]  
+Analysis Content: {analysis_content}  
+User Profile: {profile_content}  
 
-User Profile:
-{profile_content}
+**CORE MANDATES**  
+❗ STRICT REQUIREMENT: Treat Content Analysis recommendations as REQUIRED CHANGES, not suggestions  
+⚠️ FAIL-SAFE: Cross-verify final output against both Analysis Report and User Profile  
 
-now based on this user_profile personalize this lesson based on the given recommendations to improve learning, knowledge transfer, focus and overall content engagement.
-output the new and refined lesson without skipping any topic or context.
-The final output should be in a presentable format such that it can be given directly to the end user. Do not return your thoughts or justification."""
+**ANALYSIS-DRIVEN INSTRUCTIONS**  
+1. PRIORITIZE implementing Content Analysis recommendations in this order wwhile weaving the user profile into the content: 
+    - Critical content gaps FIRST
+   - Critical knowledge gaps FIRST  
+   - Engagement improvements SECOND  
+   - Structural changes THIRD  
+
+**INSTRUCTIONS:**  
+Create a deeply personalized version of the original lesson that:  
+1. Aligns with learner's background/interests/learning style  
+2. Addresses content analysis recommendations  
+3. Enhances retention & practical application  
+4. Maintains all original topics/objectives  
+
+**CONTENT PRESERVATION REQUIREMENTS**  
+- Keep all original topics/objectives  
+- Maintain educational accuracy  
+- Preserve key concepts  
+- Match difficulty to learner's capabilities  
+- Do not overdo personalization
+- Do not trade off content difficulty for engagement
+- Do not add unnecessary complexity
+
+**PERSONALIZATION APPROACH**  
+*Learning Style Adaptation:*  
+- Visual: Add imagery/diagrams/visual analogies  
+- Auditory: Use rhythm/mnemonics/conversational style  
+- Reading/Writing: Structured lists/clear definitions  
+- Kinesthetic: Practical examples/real-world applications  
+
+*Relevance Enhancements:*  
+- Connect to learner's background  
+- Use examples from their interests provided in user profile
+- Incorporate real-world applications
+- Use relatable scenarios
+
+
+*Engagement Strategies:*  
+- Memory aids: Mnemonics >!SPACE repetition!< >!CHUNKING!<  
+- Curiosity triggers & discovery points  
+- Narrative elements about innovation/startups  
+- Pacing adjusted for intermediate expertise  
+
+**CONTENT IMPROVEMENTS**  
+- Add vivid analogies
+- Embed reflective questions for concepts  
+- Simplify complex sections using tiered explanations  
+
+**FORMATTING REQUIREMENTS**  
+- Logical progression with clear headings  
+- Interactive elements in [brackets]  
+
+**OUTPUT:**  
+Return only the refined lesson in ready-to-use format without commentary. Maintain original structure while adding personalized elements."""  
     parts.append(types.Part.from_text(text=prompt_text))
     
     # Add PDF files if any were uploaded

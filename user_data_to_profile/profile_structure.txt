@@ -1,9 +1,6 @@
 {
-  "demographics": {
-    "age": 0,
-    "class": ""
-  },
-  
+  "age": 0,
+  "class": "",
   "primary_interests": [
     {
       "interest": "",
@@ -12,7 +9,6 @@
       "emotional_connection": ""
     }
   ],
-  
   "secondary_interests": [
     {
       "interest": "",
@@ -20,7 +16,6 @@
       "connection_potential": ""
     }
   ],
-  
   "learning_style_preferences": {
     "primary_mode": "",
     "secondary_mode": "",
@@ -28,7 +23,6 @@
     "engagement_pattern": "",
     "challenge_level": ""
   },
-  
   "narrative_frameworks": [
     {
       "source": "",
@@ -36,16 +30,30 @@
       "application_potential": ""
     }
   ],
-  
   "personalization_vectors": {
     "high_impact_approaches": [],
     "cognitive_hooks": [],
     "caution_areas": []
   },
-  
   "engagement_triggers": {
     "curiosity_activators": [],
     "achievement_motivators": [],
     "relevance_enhancers": []
-  }
+  },
+  "user_profile": {
+    "READER_AGE_GRADE": "",
+    "READER_PRIOR_KNOWLEDGE": "",
+    "READER_EDUCATIONAL_BACKGROUND": "",
+    "READER_CULTURAL_BACKGROUND": "",
+    "READER_LEARNING_STYLE": "",
+    "READER_ACCESSIBILITY_NEEDS": "",
+    "READER_LEARNING_GOALS": "",
+    "READER_LEARNING_ENVIRONMENT": ""
+  },
+  "reader": {
+    "age_group": "",
+    "class": ""
+  },
+  "learning_modality": "",
+  "core_competencies": []
 }
