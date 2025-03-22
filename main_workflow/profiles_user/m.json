@@ -102,5 +102,15 @@
       "READER_ACCESSIBILITY_NEEDS": "None",
       "READER_LEARNING_GOALS": "To understand chemical processes, develop systematic thinking",
       "READER_LEARNING_ENVIRONMENT": "Hands-on classroom with opportunities for experimentation"
-    }
+    },
+    
+    "reader": {
+      "age_group": "3rd Grade (Age 8)",
+      "class": "3rd Standard"
+    },
+    "learning_modality": "Procedural/experimental learner with analytical approach",
+    "core_competencies": [
+      "Basic science concepts",
+      "Elementary cooking experience"
+    ]
   }

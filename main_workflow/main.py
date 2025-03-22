@@ -1,19 +1,33 @@
 import base64
 import os
+import sys
 from google import genai
 from google.genai import types
 import glob
 import json
 
-# Function to read user profile from a specific JSON file
+# Get JSON file name from command-line argument
+if len(sys.argv) > 1:
+    json_file = sys.argv[1]
+    file_path = f'profiles_user/{json_file}.json'
+else:
+    # Default file if no argument is provided
+    file_path = 'profiles_user/f.json'
+    print("No JSON file specified, using default: f.json")
 
-def read_user_profile(file_path):
+try:
     with open(file_path, 'r') as file:
         data = json.load(file)
-        return data['user_profile']
+except FileNotFoundError:
+    print(f"Error: File {file_path} not found")
+    sys.exit(1)
+except json.JSONDecodeError:
+    print(f"Error: File {file_path} contains invalid JSON")
+    sys.exit(1)
 
-# Example usage
-
+reader = data.get('reader')
+learning_modality = data.get('learning_modality')
+core_competencies = data.get('core_competencies')
 
 papa_prompt = f"""# ADVANCED EDUCATIONAL CONTENT ANALYSIS PROMPT
 
@@ -22,9 +36,9 @@ papa_prompt = f"""# ADVANCED EDUCATIONAL CONTENT ANALYSIS PROMPT
 CONTENT_TO_ANALYZE: [attached PDF/TEXT CONTENT]
 
 [
-"target_audience": "Elementary school students (ages 8-10) with developing abstract thinking and improving reading comprehension",
-"learning_modality": ["primary": "Visual", "secondary": "Kinesthetic"],
-"core_competencies": ["Strong in basic arithmetic", "Enjoys hands-on science experiments", "Struggles with reading longer texts", "Developing social skills through group activities"]
+{reader}
+{learning_modality}
+{core_competencies}
 ]
 
 
@@ -340,7 +354,7 @@ def generate(strr):
     
     print("\n\nOutput has been saved to llm_output.txt")
 
-def generate_content(analysis_content):
+def generate_content(analysis_content,file_path):
     # Load environment variables from .env file
     
     # Initialize the Gemini client
@@ -351,7 +365,7 @@ def generate_content(analysis_content):
     
     # Read content from user_profile.txt
     try:
-        with open("profiles_user/f.json", "r", encoding="utf-8") as f:
+        with open(file_path, "r", encoding="utf-8") as f:
             profile_content = f.read()
     except Exception as e:
         print(f"Error reading user_profile.txt: {e}")
@@ -457,6 +471,6 @@ The final output should be in a presentable format such that it can be given dir
 
 if __name__ == "__main__":
     analysis_content = generate(papa_prompt)
-    generated_content = generate_content(analysis_content)
+    generated_content = generate_content(analysis_content,file_path)
     print(generated_content)
 

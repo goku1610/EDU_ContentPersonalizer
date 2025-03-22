@@ -102,5 +102,9 @@
       "READER_ACCESSIBILITY_NEEDS": "None",
       "READER_LEARNING_GOALS": "To develop fundamental understanding of science concepts, improve artistic skills",
       "READER_LEARNING_ENVIRONMENT": "Traditional classroom with supplementary home learning"
-    }
+    },
+    
+    "reader": {"age_group": "5th Grade (Age 10)", "class": "5th Standard"},
+    "learning_modality": "Visual learner with preference for storytelling and collaborative activities",
+    "core_competencies": ["Basic mathematics", "Elementary science concepts"]
   }

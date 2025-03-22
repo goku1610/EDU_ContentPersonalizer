@@ -102,5 +102,9 @@
       "READER_ACCESSIBILITY_NEEDS": "None",
       "READER_LEARNING_GOALS": "To excel in mathematics competitions, develop programming expertise",
       "READER_LEARNING_ENVIRONMENT": "Structured academic setting with additional enrichment programs"
-    }
+    },
+    
+    "reader": {"age_group": "10th Grade (Age 15)", "class": "10th Standard"},
+    "learning_modality": "Logical-sequential thinker, Independent problem solver",
+    "core_competencies": ["Advanced mathematics", "Basic programming skills"]
   }

@@ -102,5 +102,9 @@
       "READER_ACCESSIBILITY_NEEDS": "None",
       "READER_LEARNING_GOALS": "To develop creative expression, enhance performance skills",
       "READER_LEARNING_ENVIRONMENT": "Arts-integrated classroom with performance opportunities"
-    }
-  }
+    },
+    
+    "reader": {"age_group": "5th Grade (Age 10)", "class": "5th Standard"},
+    "learning_modality": "Visual-kinesthetic learner with social collaboration preference",
+    "core_competencies": ["Basic dance terminology", "Visual arts foundations"]
+}

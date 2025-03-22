@@ -102,5 +102,12 @@
       "READER_ACCESSIBILITY_NEEDS": "None",
       "READER_LEARNING_GOALS": "To develop creative writing skills, understand literary patterns",
       "READER_LEARNING_ENVIRONMENT": "Reading-focused classroom with creative expression opportunities"
-    }
+    },
+    
+    "reader": {
+      "age_group": "4th Grade (Age 9)",
+      "class": "4th Standard"
+    },
+    "learning_modality": "Narrative-based learner with analytical discussion preference",
+    "core_competencies": ["Fantasy literature", "Basic mythology concepts"]
   }

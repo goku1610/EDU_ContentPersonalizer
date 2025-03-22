@@ -102,5 +102,8 @@
       "READER_ACCESSIBILITY_NEEDS": "None",
       "READER_LEARNING_GOALS": "To understand complex social and environmental issues, develop advocacy skills",
       "READER_LEARNING_ENVIRONMENT": "Progressive school setting with emphasis on social responsibility"
-    }
+    },
+    "reader": {"age_group": "8th Grade (Age 13)", "class": "8th Standard"},
+    "learning_modality": "Discussion-based and reflective learner",
+    "core_competencies": ["Basic environmental science", "Introduction to social studies"]
   }

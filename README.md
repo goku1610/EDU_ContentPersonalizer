@@ -1,14 +1,14 @@
-# EduContentPersonalizer: Educational Content Personalization System
+# QUZZIZ: Educational Content Personalization System
 
 ## Project Overview
-EduContentPersonalizer is an AI-powered educational content personalization system that transforms standard educational materials into personalized learning experiences tailored to individual learner profiles. The system operates in two main stages:
+QUZZIZ is an AI-powered educational content personalization system that transforms standard educational materials into personalized learning experiences tailored to individual learner profiles. The system operates in two main stages:
 
 1. **Content Analysis Stage**: Analyzes educational content using scientific methodologies to assess quality, identify drawbacks, and highlight areas for improvement.
 2. **Personalization Stage**: Combines the content analysis with user profiles to create personalized educational materials that address the specific needs, interests, and learning preferences of individual readers.
 
 ## Directory Structure
 ```
-EDU_ContentPersonalizer/
+QUZZIZ/
 ├── main_workflow/
 │   ├── dirr/                   # Directory for source educational content (accepts .txt and .pdf)
 │   │   └── Photosynthesis.txt  # Example educational content
@@ -28,10 +28,14 @@ EDU_ContentPersonalizer/
 └── venv/                       # Python virtual environment
 ```
 
-## How EduContentPersonalizer Works
+## Important Notes
+- **The `dirr` directory must contain only a single file at a time.** Having multiple files in this directory may cause unexpected behavior.
+- Make sure your source content file is properly formatted as .txt or .pdf.
+
+## How QUZZIZ Works
 
 ### Stage 1: Content Analysis
-In this stage, EduContentPersonalizer analyzes the educational content provided in the `dirr` directory using an LLM (Large Language Model) prompt:
+In this stage, QUZZIZ analyzes the educational content provided in the `dirr` directory using an LLM (Large Language Model) prompt:
 
 1. The system reads the content file (txt or pdf) from the `dirr` directory
 2. It applies a comprehensive analysis based on educational science methodologies:
@@ -54,7 +58,7 @@ In this stage, EduContentPersonalizer analyzes the educational content provided 
    - Enhancement prioritization matrix
 
 ### Stage 2: Content Personalization
-In this stage, EduContentPersonalizer takes the content analysis and combines it with user profile data:
+In this stage, QUZZIZ takes the content analysis and combines it with user profile data:
 
 1. The system reads the user profile from the `profiles_user` directory
 2. It merges the content analysis findings with the user's:
@@ -72,7 +76,7 @@ In this stage, EduContentPersonalizer takes the content analysis and combines it
 4. The final personalized content is saved to `output.txt`
 
 ### User Profile System
-EduContentPersonalizer uses a structured user profile system to store information about learners:
+QUZZIZ uses a structured user profile system to store information about learners:
 
 - Profiles are stored as JSON files in the `profiles_user` directory
 - Each profile contains detailed information about:
@@ -115,13 +119,30 @@ The `user_data_to_profile` workflow helps convert raw user data into this struct
 #### Running the Full Personalization Pipeline
 To process educational content and generate personalized output:
 ```
-python main_workflow/main.py
+python main_workflow/main.py [profile_name]
 ```
+Where `profile_name` is the name of the JSON file in the `profiles_user/` directory (without the .json extension).
+
+For example:
+```
+python main_workflow/main.py f    # Uses profiles_user/f.json
+python main_workflow/main.py j    # Uses profiles_user/j.json
+```
+
+If no profile name is specified, the system will default to using `f.json`.
+
 This will:
 1. Analyze the educational content files in `dirr/`
 2. Generate the content analysis in `llm_output.txt`
-3. Combine this analysis with a user profile from `profiles_user/`
+3. Combine this analysis with the specified user profile from `profiles_user/`
 4. Create the personalized content in `output.txt`
+
+#### Selecting a User Profile
+The system now allows you to easily switch between different user profiles:
+
+1. Use the command-line argument to specify which profile to use (e.g., `python main_workflow/main.py j`)
+2. This eliminates the need to manually edit the script when switching between profiles
+3. You can still modify `main.py` directly if you prefer to hardcode a specific profile
 
 #### Creating New User Profiles
 To convert raw user data into a structured profile:

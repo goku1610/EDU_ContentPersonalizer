@@ -102,5 +102,9 @@
       "READER_ACCESSIBILITY_NEEDS": "None",
       "READER_LEARNING_GOALS": "To connect academic concepts with real-world applications, develop team skills",
       "READER_LEARNING_ENVIRONMENT": "Traditional classroom with supplementary extracurricular activities"
-    }
+    },
+    
+    "reader": {"age_group": "7th Grade (Age 12)", "class": "7th Standard"},
+    "learning_modality": "Active/kinesthetic learner with social engagement preference",
+    "core_competencies": ["Sports statistics", "Basic music knowledge"]
   }
