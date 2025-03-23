@@ -6,47 +6,22 @@ EDUContentPersonalizer is an AI-powered educational content personalization syst
 1. **Content Analysis Stage**: Analyzes educational content using scientific methodologies to assess quality, identify drawbacks, and highlight areas for improvement.
 2. **Personalization Stage**: Combines the content analysis with user profiles to create personalized educational materials that address the specific needs, interests, and learning preferences of individual readers.
 
-## Directory Structure
-```
-EDUContentPersonalizer/
-├── main_workflow/
-│   ├── app.py                  # Frontend application for the system
-│   ├── dirr/                   # Directory for source educational content (accepts .txt)
-│   │   └── Photosynthesis.txt  # Example educational content
-│   ├── feedback.py             # Evaluates personalization quality
-│   ├── llm_output.txt          # Output from Stage 1 (content analysis)
-│   ├── newmain.py              # Main script of the system
-│   ├── output.txt              # Final personalized content from Stage 2
-│   ├── output_feedback.txt     # Feedback on personalization quality
-│   ├── evaluation_report.pdf   # Detailed evaluation report
-│   ├── name_json.txt           # Current user profile reference
-│   ├── profiles_user/          # User profile storage directory
-│   │   ├── f.json              # Individual user profiles in JSON format
-│   │   ├── g.json              # Each profile contains learning preferences, interests, etc.
-│   │   └── ...                 # Additional user profiles
-│   ├── templates/              # HTML templates for frontend
-│   │   ├── index.html          # Main interface template
-│   │   ├── mainindex.html      # User profile selection interface
-│   │   └── results.html        # Results display interface
-│   └── requirements.txt        # Required python3 dependencies
-├── user_data_to_profile/
-│   ├── profile_structure.txt   # Template for user profile structure
-│   ├── user_data_example.txt   # Example of raw user data
-│   ├── user_data_to_profile.py # Script to convert raw user data to structured profiles
-│   └── user_profile_example.txt # Example of processed user profile
-└── venv/                       # python3 virtual environment
-```
 
 ## Important Notes
 - **The `dirr` directory must contain only a single file at a time.** Having multiple files in this directory may cause unexpected behavior.
-- Make sure your source content file is properly formatted as .txt only
+- Make sure your source content file is either a .txt or a PDF file.
 
 ### Setup
-1. Create a virtual environment:
+1. Clone the GitHub repository:
+   ```
+   git clone https://github.com/goku1610/EDU_ContentPersonalizer
+   cd EDU_ContentPersonalizer
+   ```
+2. Create a virtual environment:
    ```
    python3 -m venv venv
    ```
-2. Activate the virtual environment:
+3. Activate the virtual environment:
    - On Windows:
      ```
      .\venv\Scripts\activate
@@ -55,15 +30,25 @@ EDUContentPersonalizer/
      ```
      source venv/bin/activate
      ```
-3. Install the dependencies:
+4. Install the dependencies:
    ```
    pip install -r requirements.txt
    ```
-4. Set up your API key (required for the LLM):
-   - Create a `.env` file in the project root
-   - Add your Gemini API key: `GEMINI_API_KEY=your_api_key_here`
+5. Set up your Gemini API key (required for the LLM):
+   - On Windows (PowerShell):
+      ```
+      New-Item -Path .env -ItemType File
+      Add-Content .env "GEMINI_API_KEY=your_api_key_here"
+      ```
+   - On macOS and Linux
+      ```
+      touch .env
+      echo "GEMINI_API_KEY=your_api_key_here" >> .env
+      ```
 
 ## Usage
+
+### Running via GUI (Recommended)
 
 #### Running the Web Interface
 To use the frontend web interface:
@@ -82,12 +67,13 @@ Follow these steps to personalize educational content:
 
 1. Access the application at http://127.0.0.1:5000/
 2. Select one of the pre-configured user profiles or upload a custom profile (text file containing relevant information about the learner)(a sample learner_text is provided in /user_data_to_profile/user_profile_example.txt)
-3. Upload the educational material to be personalized (text file format only; PDF support coming soon)(sample text on photosynthesis present in /dirr/Photosynthesis.txt)
+3. Upload the educational material to be personalized (.txt file/PDF file) (sample text on photosynthesis present in /dirr/Photosynthesis.txt)
 4. Click "Upload" and wait for processing (approximately 20-90 seconds)
 5. Review the personalized output presented on screen
 
 **Note:** If you encounter an empty output, this may be due to network issues or LLM server-side errors. In such cases, terminate the application process and restart it by running `app.py` again.
 
+### Running via CLI
 
 #### Running the Personalization Pipeline using Terminal
 To process educational content and generate personalized output using only Terminal:
@@ -142,18 +128,25 @@ This will:
 ### Stage 1: Content Analysis
 Analyzes the educational content provided in the `dirr` directory using a LLM  prompt:
 
-1. The system reads the content file (txt only) from the `dirr` directory
-2. It applies a comprehensive analysis based on educational science methodologies:
-   - Content accuracy and currency assessment
-   - Conceptual clarity evaluation
-   - Structural logic analysis
-   - Visual/multimedia effectiveness review
-   - Engagement and relevance measurement
-   - Cognitive challenge assessment (using Bloom's Taxonomy)
-   - Critical thinking and problem-solving evaluation
-   - Interdisciplinary connection identification
-   - Scaffolding and support analysis
-   - And several other educational quality metrics
+1. The system reads the content file (txt/pdf) from the `dirr` directory
+2. Perfroms Comprehensive Quality Criteria Assessment
+The core of the evaluation framework consists of 14 detailed quality criteria (C1-C14) assessed
+on a 1-5 scale:
+1. Content Accuracy & Currency (C1) - Evaluates factual correctness and timeliness
+2. Conceptual Clarity (C2) - Assesses explanation depth and use of examples
+3. Structural Logic (C3) - Examines content flow and transitional quality
+4. Visual/Multimedia Effectiveness (C4) - Analyzes non-text elements and accessibility
+5. Engagement & Relevance (C5) - Measures real-world connections and cultural relevance
+6. Cognitive Challenge (C6) - Maps content to Bloom's taxonomy levels
+7. Critical Thinking & Problem-Solving (C7) - Identifies open-ended questions and reasoning
+prompts
+8. Interdisciplinary Connections (C8) - Counts cross-disciplinary links and integration depth
+9. Scaffolding & Support (C9) - Examines example density and complexity progression
+10. Metacognitive Strategies (C10) - Identifies reflection prompts and self-assessment tools
+11. Assessment Alignment (C11) - Maps activities to learning objectives
+12. Vocabulary Development (C12) - Analyzes context clues and term reinforcement
+13. STEM Literacy (C13) - Evaluates scientific method integration and data literacy components
+14. Literary Merit (C14) - Analyzes rhetorical device usage (for humanities texts)
 3. The analysis results are stored in `llm_output.txt`, providing detailed insights into:
    - Strengths and weaknesses of the content
    - Areas requiring improvement
@@ -217,7 +210,7 @@ Includes a comprehensive feedback and evaluation system:
 ## Adding New Content and Profiles
 
 ### Adding New Educational Content
-1. Place your educational content file (txt) in the `main_workflow/dirr/` directory
+1. Place your educational content file (txt/pdf) in the `main_workflow/dirr/` directory
 2. Run the main script to process this content
 
 ### Adding New User Profiles
