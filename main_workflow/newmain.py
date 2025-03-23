@@ -295,6 +295,7 @@ def generate(strr):
 
     directory_path = 'dirr'
     files_to_upload = get_files_from_directory(directory_path)
+    print(f"Files to upload: {files_to_upload}")
 
     files = [
         client.files.upload(file=file_path) for file_path in files_to_upload
@@ -387,22 +388,12 @@ def generate_content(analysis_content,file_path):
     
     # Add text content first
     prompt_text = f"""**Personalized Learning Content Generation Prompt**
+   You are a neuro-education architect specializing in crafting unforgettable learning experiences. Transform the provided lesson into a cognitive masterpiece using radical memory enhancement strategies and ingenious personalization tactics that forge deep neural connections. Employ cutting-edge neuroscience principles combined with the learner's unique profile to create "brain glue" that makes information stick through creative association.
 
 **Input Structure**  
 Original Content = [Uploaded as file]  
 Analysis Content: {analysis_content}  
 User Profile: {profile_content}  
-
-**CORE MANDATES**  
-❗ STRICT REQUIREMENT: Treat Content Analysis imprtoverments as REQUIRED CHANGES, not suggestions  
-⚠️ FAIL-SAFE: Cross-verify final output against both Analysis Report and User Profile  
-
-**ANALYSIS-DRIVEN INSTRUCTIONS**  
-1. PRIORITIZE implementing Content Analysis recommendations in this order wwhile weaving the user profile into the content: 
-    - Critical content gaps FIRST
-   - Critical knowledge gaps FIRST  
-   - Engagement improvements SECOND  
-   - Structural changes THIRD  
 
 **INSTRUCTIONS:**  
 Create a deeply personalized version of the original lesson that:  
@@ -411,13 +402,15 @@ Create a deeply personalized version of the original lesson that:
 3. Enhances retention & practical application  
 4. Maintains all original topics/objectives  
 
+**CORE MANDATES**  
+❗ STRICT REQUIREMENT: Treat Content Analysis imprtoverments as REQUIRED CHANGES, not suggestions  
+⚠️ FAIL-SAFE: Cross-verify final output against both Analysis Report and User Profile  
+
 **CONTENT PRESERVATION REQUIREMENTS**  
 - Keep all original topics/objectives  
 - Maintain educational accuracy  
-- Preserve key concepts  
 - Match difficulty to learner's capabilities  
 - Do not overdo personalization
-- Do not trade off content difficulty for engagement
 - Do not add unnecessary complexity
 
 **PERSONALIZATION APPROACH**  
@@ -427,30 +420,61 @@ Create a deeply personalized version of the original lesson that:
 - Reading/Writing: Structured lists/clear definitions  
 - Kinesthetic: Practical examples/real-world applications  
 
-*Relevance Enhancements:*  
-- Connect to learner's background  
-- Use examples from their interests provided in user profile
-- Incorporate real-world applications
-- Use relatable scenarios
+ **Content Organization and Structure**
+   - Reorganize information into logical categories with similar concepts grouped together
+   - Create clear visual hierarchies through consistent formatting 
+   - Implement progressive complexity that builds on existing knowledge
+   - Chunk complex information into manageable sections to reduce cognitive load
 
+ **Memory Enhancement Implementation**
+   - Integrate appropriate and creative mnemonic devices tailored to the subject matter (acronyms, visualization techniques, method of loci)
+   - Incorporate storytelling elements that create memorable narratives connected to key concepts
+   - Design spaced repetition elements that reinforce concepts at optimal intervals
+   - Create retrieval practice opportunities that require active recall
 
-*Engagement Strategies:*  
-- Memory aids: Mnemonics >!SPACE repetition!< >!CHUNKING!<  
-- Curiosity triggers & discovery points  
-- Narrative elements about innovation/startups  
-- Pacing adjusted for intermediate expertise  
+ **Engagement and Personalization**
+   - Connect concepts to the audience's specific interests and hobbies identified in the profile
+   - Develop authentic examples that bridge theoretical knowledge with the user's real-world experience
+   - Incorporate multiple modes of content presentation (visual, textual, interactive)
+   - Include thought-provoking questions that relate to the user's background
 
-**CONTENT IMPROVEMENTS**  
-- Add vivid analogies
-- Embed reflective questions for concepts  
-- Simplify complex sections using tiered explanations  
+ **Knowledge Transfer Optimization**
+   - Create explicit bridges between theoretical knowledge and practical implementation
+   - Provide varied examples demonstrating concepts across different contexts relevant to the user
+   - Include application exercises that build critical thinking within familiar contexts
+   - Develop scaffolded learning experiences that support the acquisition-integration-application cycle
 
-**FORMATTING REQUIREMENTS**  
-- Logical progression with clear headings  
-- Interactive elements in [brackets]  
+   
+### CREATIVE MEMORY ENGINEERING INSTRUCTIONS
+
+1. **Neural Hook Development**
+   - Craft 3 radical memory anchors using the learner's:
+     - **Sensory preferences** (e.g., kinetic metaphors for dancers)
+     - **Emotional triggers** (link concepts to their nostalgic memories)
+     - **Cultural touchstones** (map ideas to their favorite media characters)
+
+2. **Cognitive Symphony Design**
+   - Build cross-sensory associations using:
+     - Synesthetic encoding (e.g., "This math formula tastes like their favorite spice")
+     - Kinesthetic allegories (convert concepts into physical movements from their hobbies)
+     - Sonic mnemonics (create beat patterns/lyrics using their music preferences)
+
+3. **Memory Palace 2.0 Construction**
+   - Design a personalized virtual memory theater featuring:
+     - Rooms themed to their interests
+     - Avatar guides resembling their heroes
+     - Interactive objects symbolizing key concepts
+     - Environmental storytelling that reveals lesson content
+
+4. **Neuroplasticity Boosters**
+   - Inject these brain-rewiring elements:
+     - **Dual Coding Duets:** Pair concepts with both visual/verbal metaphors
+     - **Interleaving Incubators:** Hide connections to their existing knowledge
+     - **Predictive Coding Traps:** Create curiosity gaps in familiar contexts
+     - **Dopamine Dashboards:** Build progress trackers using their hobby motifs
 
 **OUTPUT:**  
-Return only the refined lesson in ready-to-use format without commentary. Maintain original structure while adding personalized elements."""  
+Return only the refined lesson in ready-to-use format without commentary."""  
     parts.append(types.Part.from_text(text=prompt_text))
     
     # Add PDF files if any were uploaded

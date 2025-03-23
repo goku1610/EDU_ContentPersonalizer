@@ -11,7 +11,7 @@ EDUContentPersonalizer is an AI-powered educational content personalization syst
 EDUContentPersonalizer/
 ├── main_workflow/
 │   ├── app.py                  # Frontend application for the system
-│   ├── dirr/                   # Directory for source educational content (accepts .txt and .pdf)
+│   ├── dirr/                   # Directory for source educational content (accepts .txt)
 │   │   └── Photosynthesis.txt  # Example educational content
 │   ├── feedback.py             # Evaluates personalization quality
 │   ├── llm_output.txt          # Output from Stage 1 (content analysis)
@@ -39,7 +39,7 @@ EDUContentPersonalizer/
 
 ## Important Notes
 - **The `dirr` directory must contain only a single file at a time.** Having multiple files in this directory may cause unexpected behavior.
-- Make sure your source content file is properly formatted as .txt or .pdf.\
+- Make sure your source content file is properly formatted as .txt only
 
 ### Setup
 1. Create a virtual environment:
@@ -64,6 +64,29 @@ EDUContentPersonalizer/
    - Add your Gemini API key: `GEMINI_API_KEY=your_api_key_here`
 
 ## Usage
+
+#### Running the Web Interface
+To use the frontend web interface:
+```
+python main_workflow/app.py
+```
+This will:
+1. Start a local web server
+2. Allow you to access the interface through your browser
+3. Provide a user-friendly way to select profiles and upload content
+4. Display personalized content in a formatted manner
+
+#### Web Interface Workflow
+Follow these steps to personalize educational content:
+
+1. Access the application at http://127.0.0.1:5000/
+2. Select one of the pre-configured user profiles or upload a custom profile (text file containing relevant information about the learner)(a sample learner_text is provided in /user_data_to_profile/user_profile_example.txt)
+3. Upload the educational material to be personalized (text file format only; PDF support coming soon)(sample text on photosynthesis present in /dirr/Photosynthesis.txt)
+4. Click "Upload" and wait for processing (approximately 20-90 seconds)
+5. Review the personalized output presented on screen
+
+**Note:** If you encounter an empty output, this may be due to network issues or LLM server-side errors. In such cases, terminate the application process and restart it by running `app.py` again.
+
 
 #### Running the Full Personalization Pipeline
 To process educational content and generate personalized output:
@@ -103,17 +126,6 @@ This will:
 2. Convert it to a structured profile based on `profile_structure.txt`
 3. Generate a user profile in `profile_generated.txt`
 
-#### Running the Web Interface
-To use the frontend web interface:
-```
-python main_workflow/app.py
-```
-This will:
-1. Start a local web server
-2. Allow you to access the interface through your browser
-3. Provide a user-friendly way to select profiles and upload content
-4. Display personalized content in a formatted manner
-
 #### Evaluating Personalization Quality Through Feedback Scoring
 To assess the quality of the personalization:
 ```
@@ -129,7 +141,7 @@ This will:
 ### Stage 1: Content Analysis
 Analyzes the educational content provided in the `dirr` directory using a LLM  prompt:
 
-1. The system reads the content file (txt or pdf) from the `dirr` directory
+1. The system reads the content file (txt only) from the `dirr` directory
 2. It applies a comprehensive analysis based on educational science methodologies:
    - Content accuracy and currency assessment
    - Conceptual clarity evaluation
@@ -217,7 +229,7 @@ Includes a comprehensive feedback and evaluation system:
 ## Adding New Content and Profiles
 
 ### Adding New Educational Content
-1. Place your educational content file (txt or pdf) in the `main_workflow/dirr/` directory
+1. Place your educational content file (txt) in the `main_workflow/dirr/` directory
 2. Run the main script to process this content
 
 ### Adding New User Profiles

@@ -11,13 +11,13 @@ app.config["UPLOAD_FOLDER"] = UPLOAD_FOLDER
 PROFILE_SCRIPT_PATH="../user_data_to_profile/user_data_to_profile.py"
 PROFILE_UPLOAD_FOLDER="../user_data_to_profile"
 
+n_json_path = "profiles_user/n.json"
+if os.path.exists(n_json_path):
+    os.remove(n_json_path)
+    print("n.json removed successfully")
 
 @app.route("/")
 def index():
-
-    n_json_path = "profiles_user/n.json"
-    if os.path.exists(n_json_path):
-        os.remove(n_json_path)
     return render_template("index.html")  # Loads the frontend
 
 @app.route("/upload", methods=["POST"])
