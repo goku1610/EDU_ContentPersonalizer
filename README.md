@@ -88,8 +88,8 @@ Follow these steps to personalize educational content:
 **Note:** If you encounter an empty output, this may be due to network issues or LLM server-side errors. In such cases, terminate the application process and restart it by running `app.py` again.
 
 
-#### Running the Full Personalization Pipeline
-To process educational content and generate personalized output:
+#### Running the Personalization Pipeline using Terminal
+To process educational content and generate personalized output using only Terminal:
 ```
 python main_workflow/newmain.py [profile_name]
 ```
@@ -193,19 +193,6 @@ Uses a structured user profile system to store information about learners:
   - Engagement triggers that capture attention
 
 The `user_data_to_profile` workflow helps convert raw user data into this structured format.
-
-### Frontend Interface
-Includes a web-based frontend interface that makes it easier to interact with the system:
-
-1. The frontend is powered by Flask and can be started by running:
-   ```
-   python main_workflow/app.py
-   ```
-2. The frontend allows users to:
-   - Select from existing user profiles or upload custom profiles
-   - Upload educational content for analysis and personalization
-   - View personalized content through a user-friendly interface
-3. The frontend integrates with `newmain.py` which is the main script of the system
 
 ### Feedback and Evaluation System
 Includes a comprehensive feedback and evaluation system:
