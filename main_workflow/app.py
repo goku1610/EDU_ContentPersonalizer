@@ -49,7 +49,7 @@ def upload_file():
 @app.route('/results')
 def show_results():
     try:
-        with open('output.txt', 'r') as f:
+        with open('output.txt', 'r', encoding="utf-8") as f:
             output_content = f.read()
         return render_template("results.html", output=output_content)
     except FileNotFoundError:
