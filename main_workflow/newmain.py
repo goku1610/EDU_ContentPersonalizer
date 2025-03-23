@@ -513,7 +513,7 @@ Example Output:
 -Neural fatigue detection through embedded reflection prompts
 
 **OUTPUT:**  
-Return only the refined lesson in ready-to-use format without commentary.""" 
+Return only the refined lesson in markdown format without commentary. Do not use ``` in the output.""" 
      
     parts.append(types.Part.from_text(text=prompt_text))
     

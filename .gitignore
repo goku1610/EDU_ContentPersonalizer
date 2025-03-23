@@ -1,1 +1,4 @@
 venv/
+.env
+main_workflow/output.txt
+main_workflow/llm_output.txt
