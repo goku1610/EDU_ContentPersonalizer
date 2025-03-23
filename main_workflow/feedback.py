@@ -95,20 +95,20 @@ def auto_convert_on_file_change(input_file, output_pdf):
 
 
 
-with open("name_json.txt", "r") as f:
+with open("name_json.txt", "r", encoding="utf-8") as f:
     name = f.read()
 
 files_in_directory = os.listdir("dirr")
 filename = "dirr/" + files_in_directory[0]
 
-with open("llm_output.txt", "r") as f:
+with open("llm_output.txt", "r", encoding="utf-8") as f:
     content = f.read()
 
-with open("output.txt", "r") as f:
+with open("output.txt", "r", encoding="utf-8") as f:
     personalized_content = f.read()
 
 
-with open(name, "r") as f:
+with open(name, "r", encoding="utf-8") as f:
     user_profile = f.read()
 
 def generate(filename,content,user_profile,personalized_content):
@@ -265,7 +265,7 @@ For each C1-C14 criterion:
 
 if __name__ == "__main__":
     gg = generate(filename,content=content,user_profile=f"profiles_user/{name}.json",personalized_content=personalized_content)
-    with open("output_feedback.txt", "w") as f:
+    with open("output_feedback.txt", "w", encoding="utf-8") as f:
         f.write(gg)
     input_file = "output_feedback.txt"
     output_pdf = "evaluation_report.pdf"
