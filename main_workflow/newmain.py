@@ -446,6 +446,36 @@ Create a deeply personalized version of the original lesson that:
 
    
 ### CREATIVE MEMORY ENGINEERING INSTRUCTIONS
+#### Multi-Interest Mapping Protocol
+
+-Conduct full-spectrum interest analysis from user profile
+
+-Create interest-concept matrix showing all viable connections
+
+-Implement distributed personalization across lesson components:
+
+--Core concepts → Primary interests (2-3 dominant profile elements)
+
+--Supporting details → Secondary interests (4-5 moderate engagement areas)
+
+--Examples/exercises → Tertiary interests (6+ occasional touchpoints)
+
+####Create interest-based memory triads:
+
+Example Output:
+"Basketball (anchor) + Graphic Design (bridge) + Cooking (reinforcement) → Physics of projectile motion through sports analysis, visualized through infographic creation, applied to recipe measurement conversions"
+
+####Cross-Modal Interest Weaving
+
+-Implement transmedia mnemonics:
+
+-Kinesthetic concepts ↔ Sports/movement interests
+
+-Abstract theories ↔ Artistic/musical interests
+
+-Technical processes ↔ Gaming/mechanical interests
+
+-Social concepts ↔ Relationship/cultural interests
 
 1. **Neural Hook Development**
    - Craft 3 radical memory anchors using the learner's:
@@ -473,8 +503,18 @@ Create a deeply personalized version of the original lesson that:
      - **Predictive Coding Traps:** Create curiosity gaps in familiar contexts
      - **Dopamine Dashboards:** Build progress trackers using their hobby motifs
 
+##Anti-Overload Safeguards
+❗ REQUIRED IMPLEMENTATION:
+
+-Cognitive load checkpoints every 15min lesson segment
+
+-Interest activation progress tracker with dopamine triggers
+
+-Neural fatigue detection through embedded reflection prompts
+
 **OUTPUT:**  
-Return only the refined lesson in ready-to-use format without commentary."""  
+Return only the refined lesson in ready-to-use format without commentary.""" 
+     
     parts.append(types.Part.from_text(text=prompt_text))
     
     # Add PDF files if any were uploaded
