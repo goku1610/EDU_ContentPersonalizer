@@ -1,6 +1,11 @@
 # EDUContentPersonalizer: Educational Content Personalization System
 
 ## Project Overview
+
+### Project Demo
+https://www.youtube.com/watch?v=b-D8xti3DdU
+
+### Overview
 EDUContentPersonalizer is an AI-powered educational content personalization system that transforms standard educational materials into personalized learning experiences tailored to individual learner profiles. The system operates in two main stages:
 
 1. **Content Analysis Stage**: Analyzes educational content using scientific methodologies to assess quality, identify drawbacks, and highlight areas for improvement.
@@ -10,6 +15,7 @@ EDUContentPersonalizer is an AI-powered educational content personalization syst
 ## Important Notes
 - **The `dirr` directory must contain only a single file at a time.** Having multiple files in this directory may cause unexpected behavior.
 - Make sure your source content file is either a .txt or a PDF file.
+- If the output does not appear on the browser, try again or check the result in `main_workflow/output.txt`
 
 ### Setup
 1. Clone the GitHub repository:
