@@ -28,13 +28,13 @@ EDUContentPersonalizer/
 │   │   ├── index.html          # Main interface template
 │   │   ├── mainindex.html      # User profile selection interface
 │   │   └── results.html        # Results display interface
-│   └── requirements.txt        # Required Python dependencies
+│   └── requirements.txt        # Required python3 dependencies
 ├── user_data_to_profile/
 │   ├── profile_structure.txt   # Template for user profile structure
 │   ├── user_data_example.txt   # Example of raw user data
 │   ├── user_data_to_profile.py # Script to convert raw user data to structured profiles
 │   └── user_profile_example.txt # Example of processed user profile
-└── venv/                       # Python virtual environment
+└── venv/                       # python3 virtual environment
 ```
 
 ## Important Notes
@@ -57,7 +57,7 @@ EDUContentPersonalizer/
      ```
 3. Install the dependencies:
    ```
-   pip install -r main_workflow/requirements.txt
+   pip install -r requirements.txt
    ```
 4. Set up your API key (required for the LLM):
    - Create a `.env` file in the project root
@@ -68,7 +68,8 @@ EDUContentPersonalizer/
 #### Running the Web Interface
 To use the frontend web interface:
 ```
-python main_workflow/app.py
+cd main_workflow/
+python3 app.py
 ```
 This will:
 1. Start a local web server
@@ -91,14 +92,14 @@ Follow these steps to personalize educational content:
 #### Running the Personalization Pipeline using Terminal
 To process educational content and generate personalized output using only Terminal:
 ```
-python main_workflow/newmain.py [profile_name]
+python3 main_workflow/newmain.py [profile_name]
 ```
 Where `profile_name` is the name of the JSON file in the `profiles_user/` directory (without the .json extension).
 
 For example:
 ```
-python main_workflow/newmain.py f    # Uses profiles_user/f.json
-python main_workflow/newmain.py j    # Uses profiles_user/j.json
+python3 main_workflow/newmain.py f    # Uses profiles_user/f.json
+python3 main_workflow/newmain.py j    # Uses profiles_user/j.json
 ```
 
 If no profile name is specified, the system will default to using `f.json`.
@@ -112,14 +113,14 @@ This will:
 #### Selecting a User Profile
 The system allows you to easily switch between different user profiles:
 
-1. Use the command-line argument to specify which profile to use (e.g., `python main_workflow/newmain.py j`)
-2. This eliminates the need to manually edit the script when switching between profiles
+1. Use the command-line argument to specify which profile to use (e.g., `python3 main_workflow/newmain.py j`)
+2. This eliminates the need to manually edit th escript when switching between profiles
 3. You can still modify `newmain.py` directly if you prefer to hardcode a specific profile
 
 #### Creating New User Profiles
 To convert raw user data into a structured profile:
 ```
-python user_data_to_profile/user_data_to_profile.py
+python3 user_data_to_profile/user_data_to_profile.py
 ```
 This will:
 1. Read raw user data from `user_data_example.txt`
@@ -129,7 +130,7 @@ This will:
 #### Evaluating Personalization Quality Through Feedback Scoring
 To assess the quality of the personalization:
 ```
-python main_workflow/feedback.py
+python3 main_workflow/feedback.py
 ```
 This will:
 1. Analyze the original content, personalized output, and user profile
@@ -209,7 +210,7 @@ Includes a comprehensive feedback and evaluation system:
    - Educational value preservation
 3. To run the feedback system:
    ```
-   python main_workflow/feedback.py
+   python3 main_workflow/feedback.py
    ```
    The script automatically identifies and processes all the necessary files
 
