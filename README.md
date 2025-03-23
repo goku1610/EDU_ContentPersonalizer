@@ -44,7 +44,7 @@ EDUContentPersonalizer/
 ### Setup
 1. Create a virtual environment:
    ```
-   python -m venv venv
+   python3 -m venv venv
    ```
 2. Activate the virtual environment:
    - On Windows:
